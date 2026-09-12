@@ -67,3 +67,10 @@ Thumbs.db
 *.zip
 *.pptx
 *.apk
+
+# Signing keystore - NEVER commit these
+*.jks
+*.keystore
+*.jks.b64
+*.keystore.b64
+setup-signing.ps1
