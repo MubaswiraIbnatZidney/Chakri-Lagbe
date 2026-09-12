@@ -6,6 +6,10 @@ on:
     tags:
       - 'v*.*.*'
 
+# Required for softprops/action-gh-release to create releases and upload assets
+permissions:
+  contents: write
+
 jobs:
   release:
     name: Build & Publish Signed Release APK
