@@ -1,58 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/jobback"
+    android:background="?attr/colorBackground"
     tools:context=".PostJobActivity">
 
-
-    <include layout ="@layout/toolbar"
-        android:id="@+id/title_actionbar"
-        />
-
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar"
+            android:id="@+id/title_actionbar" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:id="@+id/recycler_job_post_id"
-                android:layout_height="match_parent"
-                 />
-        </LinearLayout>
-
-
-
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_job_post_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingTop="8dp"
+        android:paddingBottom="88dp"
+        android:clipToPadding="false" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="25dp"
-        android:layout_x="269dp"
-        android:layout_y="539dp"
-        android:backgroundTint="#b2d8d8"
-        android:clickable="true"
-        app:fabSize="normal"
+        android:layout_margin="24dp"
+        android:contentDescription="Add New Job"
+        app:backgroundTint="?attr/colorSecondary"
+        app:tint="?attr/colorOnSecondary"
         app:srcCompat="@drawable/add" />
 
-</AbsoluteLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
